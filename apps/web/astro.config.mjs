@@ -7,11 +7,25 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import keystatic from "@keystatic/astro";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), mdx(), keystatic()],
+  integrations: [
+    react(),
+    mdx({
+      syntaxHighlight: "shiki",
+      shikiConfig: {
+        theme: "github-dark-dimmed",
+      },
+      gfm: true,
+    }),
+    ,
+    keystatic(),
+    icon(),
+  ],
 });

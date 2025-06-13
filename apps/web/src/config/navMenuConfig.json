@@ -1,0 +1,43 @@
+{
+  "navItems": [
+    {
+      "discriminant": "plainLink",
+      "value": {
+        "title": "Home",
+        "href": "/home"
+      }
+    },
+    {
+      "discriminant": "dropdown",
+      "value": {
+        "title": "Resources",
+        "items": [
+          {
+            "title": "Blog",
+            "href": "/blog",
+            "description": "Exlplre our blog"
+          },
+          {
+            "title": "Guides",
+            "href": "/guides",
+            "description": "Explore our guide"
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "plainLink",
+      "value": {
+        "title": "Features",
+        "href": "/features"
+      }
+    },
+    {
+      "discriminant": "plainLink",
+      "value": {
+        "title": "Pricing",
+        "href": "/pricing"
+      }
+    }
+  ]
+}

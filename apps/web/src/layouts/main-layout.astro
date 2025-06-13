@@ -1,0 +1,36 @@
+---
+import Footer from "@/components/layout/footer.astro";
+import Header from "@/components/layout/header.astro";
+
+import BaseLayout from "./base-layout.astro";
+// import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+
+import siteConfig from "@/config/siteConfig.json";
+
+import MainNavigationMenu from "@/components/main-navigation-menu";
+import { ThemeSwitcher } from "@repo/ui/components/theme-switcher";
+import { buttonVariants } from "@repo/ui/components/button";
+import { cn } from "@repo/ui/lib/utils";
+// import { marketingConfig } from "@/config/marketing";
+// import MainNav from "@/components/layout/main-nav.astro";
+
+type Props = {
+  title: string;
+  description?: string;
+  mainClass?: string;
+};
+
+const { title, description, mainClass } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div>
+    <MainNavigationMenu slot="left-header" client:load />
+  </div>
+
+  <main class={cn(mainClass)}>
+    <slot />
+  </main>
+
+  <Footer />
+</BaseLayout>

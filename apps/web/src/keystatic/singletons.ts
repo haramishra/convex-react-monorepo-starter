@@ -4,7 +4,7 @@ import { fields, collection, singleton } from "@keystatic/core";
 const singletonsConfig = {
   siteConfig: singleton({
     label: "Site Details",
-    path: "src/config/",
+    path: "src/config/siteConfig",
     format: {
       // Assuming you might want to keep the export structure
       data: "json",
@@ -19,7 +19,7 @@ const singletonsConfig = {
   }),
   socials: singleton({
     label: "Social Links",
-    path: "src/config",
+    path: "src/config/socials",
     schema: {
       socialMedia: fields.array(
         fields.object({
@@ -45,7 +45,7 @@ const singletonsConfig = {
   navMenu: singleton({
     // Use singleton() directly
     label: "Navigation Menu",
-    path: "src/config/", // Path set to src/config/ (e.g., src/config/navMenu.json)
+    path: "src/config/navMenuConfig", // Path set to src/config/ (e.g., src/config/navMenu.json)
     format: { data: "json" }, // We'll store it as JSON
     schema: {
       // The navItems field is now directly a fields.blocks array
@@ -99,7 +99,7 @@ const singletonsConfig = {
   }),
   footerLinks: singleton({
     label: "Footer Links",
-    path: "src/config/",
+    path: "src/config/footerLinks",
     format: {
       // Assuming you might want to keep the export structure
       data: "json",

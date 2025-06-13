@@ -25,9 +25,9 @@ export const collectionsConfig = {
       cover: fields.image({
         label: "Blog cover Image",
         directory: "src/assets/images/posts",
-        publicPath: "@assets/images/posts",
+        publicPath: "/src/assets/images/posts",
       }),
-      tags: fields.array(fields.text({ label: "Tag" }), {
+      category: fields.array(fields.text({ label: "Category" }), {
         label: "Tags",
         itemLabel: (props) => props.value,
       }),
@@ -37,8 +37,8 @@ export const collectionsConfig = {
           image: {
             directory: "src/assets/images/posts",
 
-            // Use the @assets path alias
-            publicPath: "@assets/images/posts/",
+            // Use the /src/assets path alias
+            publicPath: "/src/assets/images/posts/",
           },
         },
       }),
@@ -67,10 +67,10 @@ export const collectionsConfig = {
 
         options: {
           image: {
-            directory: "src/assets/images/posts",
+            directory: "src/assets/images/legal",
 
-            // Use the @assets path alias
-            publicPath: "@assets/images/posts/",
+            // Use the /src/assets path alias
+            publicPath: "/src/assets/images/legal/",
           },
         },
       }),
@@ -104,8 +104,8 @@ export const collectionsConfig = {
           image: {
             directory: "src/assets/images/changelog",
 
-            // Use the @assets path alias
-            publicPath: "@assets/images/changelog/",
+            // Use the /src/assets path alias
+            publicPath: "/src/assets/images/changelog/",
           },
         },
       }),
@@ -117,22 +117,37 @@ export const collectionsConfig = {
     label: "Guides",
     slugField: "title",
     entryLayout: "content",
-    path: "src/content/guides/**/*", // Example for guides
+    path: "src/content/guides/*", // Example for guides
     format: {
       contentField: "content",
     },
     schema: {
       title: fields.slug({ name: { label: "Title" } }),
       description: fields.text({ label: "Description", multiline: true }),
-      lastUpdated: fields.date({ label: "Last Updated", defaultValue: Date() }),
+      published: fields.checkbox({
+        label: "Published",
+        description: "Check it you want to show it on prod",
+        defaultValue: false,
+      }),
+      featured: fields.checkbox({
+        label: "Featured",
+        description: "Check it you want guide to be featured",
+        defaultValue: false,
+      }),
+      cover: fields.image({
+        label: "Blog cover Image",
+        directory: "src/assets/images/guides",
+        publicPath: "/src/assets/images/guides/",
+      }),
+      pubDate: fields.date({ label: "Publish Date", defaultValue: Date() }),
       content: fields.mdx({
         label: "Content",
         options: {
           image: {
             directory: "src/assets/images/guides",
 
-            // Use the @assets path alias
-            publicPath: "@assets/images/guides/",
+            // Use the /src/assets path alias
+            publicPath: "/src/assets/images/guides/",
           },
         },
       }),

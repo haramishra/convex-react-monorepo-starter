@@ -1,0 +1,21 @@
+{
+  "links": [
+    {
+      "title": "Company",
+      "items": [
+        {
+          "title": "Home",
+          "href": "/"
+        },
+        {
+          "title": "Features",
+          "href": "/features"
+        },
+        {
+          "title": "Pricing",
+          "href": "/pricing"
+        }
+      ]
+    }
+  ]
+}
