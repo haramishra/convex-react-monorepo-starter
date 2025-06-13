@@ -116,7 +116,7 @@ export const collectionsConfig = {
   guides: collection({
     label: "Guides",
     slugField: "title",
-
+    entryLayout: "content",
     path: "src/content/guides/**/*", // Example for guides
     format: {
       contentField: "content",
@@ -124,8 +124,7 @@ export const collectionsConfig = {
     schema: {
       title: fields.slug({ name: { label: "Title" } }),
       description: fields.text({ label: "Description", multiline: true }),
-      category: fields.text({ label: "Category" }),
-      lastUpdated: fields.date({ label: "Last Updated" }),
+      lastUpdated: fields.date({ label: "Last Updated", defaultValue: Date() }),
       content: fields.mdx({
         label: "Content",
         options: {
