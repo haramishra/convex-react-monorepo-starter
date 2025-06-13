@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "cf:build": "turbo build && pnpm prepare:preview",
+    "prepare:preview": "rm -rf dist && mkdir -p dist/app && cp -a apps/web/dist/. dist/ && cp -a apps/app/dist/. dist/app/",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preview": "pnpm build && pnpm serve",
+    "serve": "serve dist -l 4000"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
