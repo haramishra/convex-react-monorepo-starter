@@ -1,0 +1,57 @@
+---
+import siteConfig from "@/config/siteConfig.json";
+import { cn } from "@repo/ui/lib/utils";
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  className?: string;
+};
+
+import { Image } from "astro:assets";
+
+const { className } = Astro.props;
+---
+
+<header
+  class={cn(
+    "flex items-center h-16 md:h-18 z-50 sticky top-0 bg-background",
+    className
+  )}
+>
+  <div class="relative container flex items-center justify-between w-full">
+    <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
+      <a href="/" class="hidden items-center space-x-2 md:flex">
+        <Image
+          src={"/logo-dark.png"}
+          alt="logo"
+          width={144}
+          height={32}
+          class={"hidden dark:block w-40"}
+        />
+        <Image
+          src={"/logo-light.png"}
+          alt="logo"
+          width={144}
+          height={32}
+          class={"dark:hidden block"}
+        />
+      </a>
+
+      <slot name="mobile-nav-header" />
+
+      <div class="hidden md:flex">
+        <slot name="left-header" />
+      </div>
+    </div>
+
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-4 md:hidden"
+    >
+      <a href="/" aria-label="Lucid forms homepage">
+        <Icon name="lucide-forms" class="size-8" />
+      </a>
+    </div>
+
+    <slot name="right-header" />
+  </div>
+</header>
