@@ -1,0 +1,259 @@
+{
+  "metaTitle": "Lucid Forms | Integraciones de formularios súper fáciles",
+  "premium": "Premium",
+  "about": "Acerca de",
+  "features": "Características",
+  "permissionsRequired": "Permisos Requeridos",
+  "pricing": "Precios",
+  "tags": "Etiquetas",
+  "permission": "Permiso",
+  "cancel": "Cancelar",
+  "manageIntegration": "Gestionar Integración",
+  "addIntegration": "Añadir Integración",
+  "auth": {
+    "title": "Empezar",
+    "description": "Crea tu cuenta o inicia sesión para continuar.",
+    "email": "Correo electrónico",
+    "otp": "Ingresar OTP",
+    "getStartWithEmail": "Empezar con correo electrónico",
+    "or": "o",
+    "loginWithGoogle": "Continuar con Google",
+    "forgotOtp": "¿No recibiste la OTP?",
+    "resendOtp": "Reenviar OTP",
+    "getStartedButton": "Empezar",
+    "termsStart": "Al hacer clic en continuar, aceptas nuestros",
+    "termsOfService": "Términos de Servicio",
+    "and": "y",
+    "privacyPolicy": "Política de Privacidad",
+    "termsEnd": ".",
+    "invalidEmail": "Dirección de correo electrónico inválida.",
+    "requiredField": "Este campo es obligatorio.",
+    "authFailed": "Autenticación fallida. Por favor, inténtalo de nuevo."
+  },
+  "otp": {
+    "title": "¡Revisa tu bandeja de entrada!",
+    "subtitle": "Te acabamos de enviar una contraseña temporal por correo electrónico. Por favor, ingrésala a continuación.",
+    "codeLabel": "Código",
+    "codePlaceholder": "Código",
+    "continue": "Continuar",
+    "noCode": "¿No recibiste el código?",
+    "requestNewCode": "Solicitar nuevo código"
+  },
+  "teamPage": {
+    "headerTitle": "Panel de control",
+    "headerDescription": "Gestiona tus preferencias y configuración de cuenta",
+    "documentation": "Documentación",
+    "forms": "Formularios",
+    "settings": "Configuración",
+    "Accounts": "Cuentas",
+    "workflow": "Flujo de trabajo",
+    "loadingTeams": "Cargando equipos...",
+    "allActiveForms": "Todos los formularios activos"
+  },
+  "createTeamButton": {
+    "title": "Crear un nuevo equipo",
+    "description": "Crea un equipo para colaborar con otros.",
+    "formPlaceholder": "Este formulario de creación de equipo",
+    "createTeam": "Crear equipo"
+  },
+  "teamList": {
+    "yourTeams": "Tus cuentas de equipo",
+    "noTeams": "Aún no tienes equipos.",
+    "sharedTeams": "Equipos compartidos"
+  },
+  "teamListCard": {
+    "teamLogoAlt": "Logo del equipo"
+  },
+  "teamSelector": {
+    "ariaLabel": "Seleccionar un equipo",
+    "placeholder": "Seleccionar un equipo...",
+    "searchPlaceholder": "Buscar equipo...",
+    "errorLoading": "Error al cargar equipos",
+    "teamsHeading": "Equipos",
+    "createTeam": "Crear equipo",
+    "noTeamsFound": "No se encontraron equipos",
+    "sharedTeams": "Equipos compartidos"
+  },
+  "userActions": {
+    "theme": "Tema",
+    "language": "Idioma",
+    "logOut": "Cerrar sesión"
+  },
+  "formList": {
+    "inactiveForms": "Formularios inactivos",
+    "active": "Activo",
+    "inactive": "Inactivo"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "update": "Actualizar",
+    "continue": "Continuar",
+    "error": "Error",
+    "reject": "Rechazar",
+    "accept": "Aceptar",
+    "close": "Cerrar"
+  },
+  "teamSettings": {
+    "editName": {
+      "title": "Actualizar Nombre del Equipo",
+      "description": "El nombre y el identificador de tu equipo son únicos para tu equipo",
+      "label": "Nombre del Equipo",
+      "placeholder": "Nombre del Equipo"
+    },
+    "navigation": {
+      "general": "General",
+      "members": "Miembros",
+      "billing": "Facturación"
+    }
+  },
+  "members": {
+    "deleteInvite": {
+      "title": "Cancelar invitación pendiente",
+      "description": "¿Estás seguro? Esto no se puede deshacer",
+      "cancelling": "Cancelando...",
+      "cancelButton": "Cancelar invitación"
+    },
+    "newInvitationForm": {
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "Ingresar dirección de correo electrónico",
+      "roleLabel": "Rol del equipo",
+      "rolePlaceholder": "Seleccionar rol",
+      "createButton": "Crear invitación",
+      "successMessage": "Invitación enviada",
+      "memberOptions": {
+        "owner": "Propietario",
+        "member": "Miembro"
+      },
+      "validation": {
+        "invalidEmail": "Por favor ingresa un correo electrónico válido",
+        "selectRole": "Por favor selecciona un rol válido"
+      }
+    },
+    "pendingInvites": {
+      "title": "Invitaciones Pendientes",
+      "description": "Estas son las invitaciones pendientes para tu equipo"
+    }
+  },
+  "createTeamForm": {
+    "label": "Nombre del Equipo",
+    "placeholder": "Nombre del Equipo"
+  },
+  "validation": {
+    "teamName": {
+      "min": "El nombre debe tener al menos {{count}} caracteres",
+      "max": "El nombre debe tener menos de {{count}} caracteres"
+    },
+    "nameMinLength": "El nombre debe tener al menos 3 caracteres",
+    "nameMaxLength": "El nombre debe tener menos de 20 caracteres"
+  },
+  "createTeamInvitationButton": {
+    "button": {
+      "inviteNewMember": "Invitar nuevo miembro"
+    },
+    "dialog": {
+      "title": "Crear una nueva invitación",
+      "description": "Los enlaces de invitación solo se pueden enviar a direcciones de correo electrónico específicas para unirse a tu equipo."
+    }
+  },
+  "memberWarning": {
+    "notPermitted": "¡No permitido!",
+    "adminOnly": "Solo los administradores pueden acceder a la configuración"
+  },
+  "formNotFound": "Formulario no encontrado",
+  "goBack": "Volver",
+  "navigation": {
+    "myTeams": "Mis Equipos"
+  },
+  "invitation": {
+    "acceptError": "Error al aceptar la invitación.",
+    "rejectError": "Error al rechazar la invitación.",
+    "notFoundOrInvalid": "Invitación no encontrada o inválida. Puede haber sido eliminada o haber expirado.",
+    "notActiveTitle": "Invitación No Activa",
+    "notActiveDescription": "Esta invitación ya no está activa. Puede haber sido aceptada, rechazada o desactivada.",
+    "invitedToJoin": "Has sido invitado a unirte a: ",
+    "reviewInvitation": "Revisa esta invitación para unirte al equipo.",
+    "acceptExplanation": "Al aceptar esta invitación, podrás colaborar con los miembros del equipo en proyectos y recursos."
+  },
+  "onboarding": {
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "welcome": {
+      "title": "Bienvenido a Lucid Forms",
+      "description": "¡Hola y felicidades por dar el primer paso hacia un flujo de trabajo integrado y sin problemas! Estamos emocionados de tenerte a bordo."
+    },
+    "createTeam": {
+      "title": "Creemos tu primer equipo.",
+      "description": "Una cuenta de equipo mantiene todos tus formularios e integraciones en un solo lugar y te permite invitar fácilmente a usuarios a colaborar.",
+      "defaultName": "Mi Primer Equipo"
+    }
+  },
+  "form": {
+    "formNameLabel": "Nombre del formulario",
+    "formNamePlaceholder": "Nombre del formulario",
+    "createNewFormButton": "Crear nuevo formulario",
+    "createFormDialogTitle": "Crear formulario"
+  },
+  "integrations": {
+    "connectedIntegrations": "Integraciones Conectadas",
+    "noIntegrationAdded": "Ninguna Integración añadida",
+    "recommendedIntegrations": "Integraciones Recomendadas",
+    "allIntegrations": "Todas las Integraciones",
+    "searchIntegrations": "Buscar integraciones...",
+    "noResultsFound": "No se encontraron integraciones que coincidan con tu búsqueda."
+  },
+  "apiCopy": {
+    "defaultTitle": "Punto final de API",
+    "defaultDescription": "Usa esta URL para acceder al punto final de la API",
+    "linkCopied": "¡Enlace copiado!",
+    "failedToCopy": "Error al copiar",
+    "copyApiUrl": "Copiar URL de API"
+  },
+  "roles": {
+    "admin": "Administrador",
+    "member": "Miembro"
+  },
+  "editTeamMemberRoleForm": {
+    "updateError": "No se pudo actualizar el rol",
+    "updateSuccess": "Rol de miembro cambiado exitosamente.",
+    "noChangesDetected": "No se detectaron cambios.",
+    "primaryOwnerCannotChangeRole": "El rol del propietario principal no se puede cambiar.",
+    "teamRoleLabel": "Rol del Equipo",
+    "memberTypePlaceholder": "Tipo de miembro",
+    "updatingButton": "Actualizando...",
+    "updateRoleButton": "Actualizar Rol"
+  },
+  "deleteTeamMemberForm": {
+    "removeSuccess": "Miembro del equipo eliminado",
+    "removeError": "No se pudo eliminar al miembro del equipo",
+    "confirmation": "¿Estás seguro de que quieres eliminar a <strong>{{member}}</strong> del equipo? Esta acción no se puede deshacer.",
+    "removingButton": "Eliminando...",
+    "confirmButton": "Confirmar Eliminación"
+  },
+  "teamMemberOptions": {
+    "optionsAriaLabel": "Opciones de miembro del equipo",
+    "changeRole": "Cambiar rol",
+    "remove": "Eliminar",
+    "updateRoleTitle": "Actualizar Rol para {{member}}",
+    "updateRoleDescription": "Selecciona el nuevo rol para este miembro del equipo.",
+    "removeMemberTitle": "¿Eliminar a {{member}}?",
+    "removeMemberDescription": "¿Estás seguro de que quieres eliminar a este miembro del equipo? Esta acción no se puede deshacer."
+  },
+  "manageTeamMembers": {
+    "title": "Miembros del Equipo",
+    "loadingDescription": "Cargando miembros del equipo...",
+    "emptyDescription": "Aún no se encontraron miembros en este equipo.",
+    "emptyInvitePrompt": "Invita a miembros a colaborar.",
+    "manageDescription": "Gestiona usuarios en tu equipo.",
+    "unnamedUser": "Usuario sin nombre",
+    "primaryOwner": "Propietario Principal",
+    "joined": "Se unió {{time}}"
+  },
+  "teamRoute": {
+    "notAMember": {
+      "title": "Acceso al Equipo No Disponible",
+      "description": "Ya no eres miembro de este equipo",
+      "content": "Tu acceso a este equipo ha sido eliminado por un administrador. Si crees que esto es un error, puedes contactar a los administradores.",
+      "returnButton": "Volver al Panel de Control"
+    }
+  }
+}

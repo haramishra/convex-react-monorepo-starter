@@ -1,0 +1,221 @@
+{
+  "metaTitle": "Lucid Forms | Super Easy Form Integrations",
+  "premium": "Premium",
+  "about": "About",
+  "features": "Features",
+  "permissionsRequired": "Permissions Required",
+  "pricing": "Pricing",
+  "tags": "Tags",
+  "permission": "Permission",
+  "cancel": "Cancel",
+  "manageIntegration": "Manage Integration",
+  "addIntegration": "Add Integration",
+  "auth": {
+    "title": "Get Started",
+    "description": "Create your account or log in to continue.",
+    "email": "Email",
+    "otp": "Enter OTP",
+    "getStartWithEmail": "Get Started with Email",
+    "or": "or",
+    "loginWithGoogle": "Continue with Google",
+    "forgotOtp": "Didn't get the OTP?",
+    "resendOtp": "Resend OTP",
+    "getStartedButton": "Get Started",
+    "termsStart": "By clicking continue, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "termsEnd": ".",
+    "invalidEmail": "Invalid email address.",
+    "requiredField": "This field is required.",
+    "authFailed": "Authentication failed. Please try again."
+  },
+  "otp": {
+    "title": "Check your inbox!",
+    "subtitle": "We've just emailed you a temporary password.Please enter it below.",
+    "codeLabel": "Code",
+    "codePlaceholder": "Code",
+    "continue": "Continue",
+    "noCode": "Did not receive the code?",
+    "requestNewCode": "Request New Code"
+  },
+
+  "userActions": {
+    "theme": "Theme",
+    "language": "Language",
+    "logOut": "Log Out"
+  },
+  "common": {
+    "loading": "Loading...",
+    "update": "Update",
+    "continue": "Continue",
+    "error": "Error",
+    "reject": "Reject",
+    "accept": "Accept",
+    "close": "Close"
+  },
+  "teamSettings": {
+    "editName": {
+      "title": "Update Team Name",
+      "description": "Your team name and identifier are unique for your team",
+      "label": "Team Name",
+      "placeholder": "Team Name"
+    },
+    "navigation": {
+      "general": "General",
+      "members": "Members",
+      "billing": "Billing",
+      "accounts": "Accounts"
+    }
+  },
+  "members": {
+    "deleteInvite": {
+      "title": "Cancel pending invitation",
+      "description": "Are you sure? This cannot be undone",
+      "cancelling": "Cancelling...",
+      "cancelButton": "Cancel invitation"
+    },
+    "newInvitationForm": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter email address",
+      "roleLabel": "Team Role",
+      "rolePlaceholder": "Select role",
+      "createButton": "Create invitation",
+      "successMessage": "Invitation sent",
+      "memberOptions": {
+        "owner": "Owner",
+        "member": "Member"
+      },
+      "validation": {
+        "invalidEmail": "Please enter a valid email",
+        "selectRole": "Please select a valid role"
+      }
+    },
+    "pendingInvites": {
+      "title": "Pending Invitations",
+      "description": "These are the pending invitations for your team"
+    }
+  },
+  "createTeamForm": {
+    "label": "Team Name",
+    "placeholder": "Team Name"
+  },
+  "validation": {
+    "teamName": {
+      "min": "Name must be atleast {{count}} characters long",
+      "max": "Name must be under {{count}} characters"
+    },
+    "nameMinLength": "Name must be atleast 3 characters long",
+    "nameMaxLength": "Name must be under 20 characters"
+  },
+  "createTeamInvitationButton": {
+    "button": {
+      "inviteNewMember": "Invite new member"
+    },
+    "dialog": {
+      "title": "Create a new invitation",
+      "description": "Invitation links can only be sent to specific email addresses to join your team."
+    }
+  },
+  "memberWarning": {
+    "notPermitted": "Not permitted!",
+    "adminOnly": "Settings can only be accessed by the admins"
+  },
+  "formNotFound": "Form not found",
+  "goBack": "Go back",
+  "navigation": {
+    "myTeams": "My Teams"
+  },
+  "invitation": {
+    "acceptError": "Failed to accept invitation.",
+    "rejectError": "Failed to reject invitation.",
+    "notFoundOrInvalid": "Invitation not found or invalid. It might have been removed or expired.",
+    "notActiveTitle": "Invitation Not Active",
+    "notActiveDescription": "This invitation is no longer active. It might have been accepted, rejected, or deactivated.",
+    "invitedToJoin": "You have been invited to join: ",
+    "reviewInvitation": "Review this invitation to join the team.",
+    "acceptExplanation": "By accepting this invitation, you will be able to collaborate with team members on projects and resources."
+  },
+  "onboarding": {
+    "prev": "Prev",
+    "next": "Next",
+    "welcome": {
+      "title": "Welcome to Lucid Forms",
+      "description": "Hi there, and congratulations on taking the first step towards a seamless, integrated workflow! We’re excited to have you on board."
+    },
+    "createTeam": {
+      "title": "Let's create your first team.",
+      "description": "A team account keeps all your forms and integrations in one place, and lets you easily invite users to collaborate.",
+      "defaultName": "My First Team"
+    }
+  },
+  "form": {
+    "formNameLabel": "Form Name",
+    "formNamePlaceholder": "Form Name",
+    "createNewFormButton": "Create New form",
+    "createFormDialogTitle": "Create form"
+  },
+  "integrations": {
+    "connectedIntegrations": "Connected Integrations",
+    "noIntegrationAdded": "No Integration added",
+    "recommendedIntegrations": "Recommended Integrations",
+    "allIntegrations": "All Integrations",
+    "searchIntegrations": "Search integrations...",
+    "noResultsFound": "No integrations found matching your search."
+  },
+  "apiCopy": {
+    "defaultTitle": "API Endpoint",
+    "defaultDescription": "Use this URL to access the API endpoint",
+    "linkCopied": "Link copied!",
+    "failedToCopy": "Failed to copy",
+    "copyApiUrl": "Copy API URL"
+  },
+  "roles": {
+    "admin": "Admin",
+    "member": "Member"
+  },
+  "editTeamMemberRoleForm": {
+    "updateError": "Unable to Update Role",
+    "updateSuccess": "Member role changed successfully.",
+    "noChangesDetected": "No changes detected.",
+    "primaryOwnerCannotChangeRole": "The primary owner's role cannot be changed.",
+    "teamRoleLabel": "Team Role",
+    "memberTypePlaceholder": "Member type",
+    "updatingButton": "Updating...",
+    "updateRoleButton": "Update Role"
+  },
+  "deleteTeamMemberForm": {
+    "removeSuccess": "Team member removed",
+    "removeError": "Unable to remove team member",
+    "confirmation": "Are you sure you want to remove <strong>{{member}}</strong> from the team? This action cannot be undone.",
+    "removingButton": "Removing...",
+    "confirmButton": "Confirm Removal"
+  },
+  "teamMemberOptions": {
+    "optionsAriaLabel": "Team member options",
+    "changeRole": "Change role",
+    "remove": "Remove",
+    "updateRoleTitle": "Update Role for {{member}}",
+    "updateRoleDescription": "Select the new role for this team member.",
+    "removeMemberTitle": "Remove {{member}}?",
+    "removeMemberDescription": "Are you sure you want to remove this member from the team? This action cannot be undone."
+  },
+  "manageTeamMembers": {
+    "title": "Team Members",
+    "loadingDescription": "Loading team members...",
+    "emptyDescription": "No members found in this team yet.",
+    "emptyInvitePrompt": "Invite members to collaborate.",
+    "manageDescription": "Manage users in your team.",
+    "unnamedUser": "Unnamed User",
+    "primaryOwner": "Primary Owner",
+    "joined": "Joined {{time}}"
+  },
+  "teamRoute": {
+    "notAMember": {
+      "title": "Team Access Unavailable",
+      "description": "You're no longer a member of this team",
+      "content": "Your access to this team has been removed by an administrator. If you believe this is a mistake, you can contact the admins.",
+      "returnButton": "Return to Dashboard"
+    }
+  }
+}
