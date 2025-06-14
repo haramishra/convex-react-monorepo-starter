@@ -37,20 +37,16 @@ const guides = defineCollection({
   }),
 });
 
-const releases = defineCollection({
+const changelog = defineCollection({
   // Type-check frontmatter using a schema
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      versionNumber: z.string(),
-      image: z.object({
-        src: image(),
-        alt: z.string(),
-      }),
-      // Transform string to Date object
-      date: z.date({ coerce: true }),
-    }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    versionNumber: z.string(),
+    image: z.string(),
+    // Transform string to Date object
+    date: z.date(),
+  }),
 });
 
 const legal = defineCollection({
@@ -64,4 +60,4 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { blog, docs, guides, releases, legal };
+export const collections = { blog, docs, guides, changelog, legal };

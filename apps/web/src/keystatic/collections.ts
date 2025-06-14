@@ -81,24 +81,23 @@ export const collectionsConfig = {
   // Changelog Collection
   changelog: collection({
     label: "Changelog",
-    slugField: "version",
+    slugField: "title",
     path: "src/content/changelog/*",
     entryLayout: "content",
     format: {
       contentField: "summary",
     },
     schema: {
-      version: fields.slug({ name: { label: "Version (e.g., 1.0.0)" } }),
-      releaseDate: fields.date({ label: "Release Date" }),
-      type: fields.select({
-        label: "Change Type",
-        options: [
-          { label: "Feature", value: "feature" },
-          { label: "Fix", value: "fix" },
-          { label: "Improvement", value: "improvement" },
-        ],
-        defaultValue: "feature",
+      title: fields.slug({ name: { label: "Title" } }),
+      description: fields.text({ label: "Description", multiline: true }),
+      date: fields.date({ label: "Release Date" }),
+      versionNumber: fields.text({ label: "Version (e.g., 1.0.0)" }),
+      image: fields.image({
+        label: "version cover Image",
+        directory: "src/assets/images/guides",
+        publicPath: "/src/assets/images/guides/",
       }),
+
       summary: fields.markdoc({
         label: "Content",
         options: {
