@@ -58,6 +58,7 @@ export const collectionsConfig = {
     schema: {
       title: fields.slug({ name: { label: "Title" } }),
       description: fields.text({ label: "Description", multiline: true }),
+
       pubDate: fields.date({
         label: "Publication Date",
         defaultValue: "today",

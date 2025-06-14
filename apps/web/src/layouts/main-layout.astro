@@ -25,7 +25,7 @@ const { title, description, mainClass } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   <div>
-    <MainNavigationMenu slot="left-header" client:load />
+    <MainNavigationMenu slot="left-header" client:only />
   </div>
 
   <main class={cn(mainClass)}>
