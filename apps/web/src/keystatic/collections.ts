@@ -25,20 +25,20 @@ export const collectionsConfig = {
       cover: fields.image({
         label: "Blog cover Image",
         directory: "src/assets/images/posts",
-        publicPath: "/src/assets/images/posts",
+        publicPath: "@assets/images/posts",
       }),
       category: fields.array(fields.text({ label: "Category" }), {
         label: "Tags",
         itemLabel: (props) => props.value,
       }),
-      content: fields.mdx({
+      content: fields.markdoc({
         label: "Content",
         options: {
           image: {
             directory: "src/assets/images/posts",
 
             // Use the /src/assets path alias
-            publicPath: "/src/assets/images/posts/",
+            publicPath: "@assets/images/posts/",
           },
         },
       }),
@@ -62,7 +62,7 @@ export const collectionsConfig = {
         label: "Publication Date",
         defaultValue: "today",
       }),
-      content: fields.mdx({
+      content: fields.markdoc({
         label: "Content",
 
         options: {
@@ -70,7 +70,7 @@ export const collectionsConfig = {
             directory: "src/assets/images/legal",
 
             // Use the /src/assets path alias
-            publicPath: "/src/assets/images/legal/",
+            publicPath: "@assets/images/legal/",
           },
         },
       }),
@@ -98,14 +98,14 @@ export const collectionsConfig = {
         ],
         defaultValue: "feature",
       }),
-      summary: fields.mdx({
+      summary: fields.markdoc({
         label: "Content",
         options: {
           image: {
             directory: "src/assets/images/changelog",
 
             // Use the /src/assets path alias
-            publicPath: "/src/assets/images/changelog/",
+            publicPath: "@assets/images/changelog/",
           },
         },
       }),
@@ -140,14 +140,14 @@ export const collectionsConfig = {
         publicPath: "/src/assets/images/guides/",
       }),
       pubDate: fields.date({ label: "Publish Date", defaultValue: Date() }),
-      content: fields.mdx({
+      content: fields.markdoc({
         label: "Content",
         options: {
           image: {
             directory: "src/assets/images/guides",
 
             // Use the /src/assets path alias
-            publicPath: "/src/assets/images/guides/",
+            publicPath: "@assets/images/guides/",
           },
         },
       }),

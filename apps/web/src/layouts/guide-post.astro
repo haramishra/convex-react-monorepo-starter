@@ -21,7 +21,9 @@ const toc = await getTableOfContents(guide.body);
   <main
     class="container max-w-5xl py-6 lg:grid lg:grid-cols-[1fr_300px] lg:gap-10 lg:py-10 xl:gap-20 mx-auto"
   >
-    <article class="prose dark:prose-invert max-w-3xl">
+    <article
+      class="prose dark:prose-invert max-w-3xl prose-img:rounded-lg prose-code:rounded-lg"
+    >
       <span
         class="font-medium text-sm text-muted-foreground"
         transition:name={"date-" + slug}

@@ -4,9 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
-import mdx from "@astrojs/mdx";
+// import mdx from "@astrojs/mdx";
 import keystatic from "@keystatic/astro";
-
+import markdoc from "@astrojs/markdoc";
 import icon from "astro-icon";
 
 // https://astro.build/config
@@ -15,17 +15,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [
-    react(),
-    mdx({
-      syntaxHighlight: "shiki",
-      shikiConfig: {
-        theme: "github-dark-dimmed",
-      },
-      gfm: true,
-    }),
-    ,
-    keystatic(),
-    icon(),
-  ],
+  integrations: [react(), markdoc(), keystatic(), icon()],
 });

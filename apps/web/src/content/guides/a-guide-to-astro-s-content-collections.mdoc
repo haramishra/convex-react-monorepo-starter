@@ -8,7 +8,7 @@ description: >-
   Astro.js Content Collections.
 published: true
 featured: false
-cover: /src/assets/images/guides/a-guide-to-astro-s-content-collections/cover.jpg
+cover: '/src/assets/images/guides/a-guide-to-astro-s-content-collections/cover.jpg'
 pubDate: 2025-06-13
 ---
 ## What are Astro.js Content Collections?
@@ -17,16 +17,16 @@ Astro.js Content Collections are a way to organize and validate your content (li
 
 Think of them as a lightweight CMS built right into your Astro project, allowing you to define the expected structure of your content and then easily access it.
 
-![](/src/assets/images/guides/a-guide-to-astro-s-content-collections/nik-shuliahin-kdLewQvHDNM-unsplash.jpg)
+![](@assets/images/guides/a-guide-to-astro-s-content-collections/nik-shuliahin-Lg_oC6gDCjU-unsplash.jpg)
 
 ## Why Use Content Collections?
 
-* **Content Validation:** Define a schema for your content's frontmatter to ensure consistency and prevent errors. This is invaluable for team collaboration and long-term maintainability.
-* **Type Safety:** When using TypeScript, Content Collections provide type inference for your content's frontmatter, leading to a more robust development experience.
-* **Powerful Querying:** Astro provides utilities to easily fetch, filter, sort, and paginate your content.
-* **Organized Content:** Keep your content files structured and easily discoverable within your project.
-* **Automatic Zod Integration:** Leverage Zod for robust schema validation, ensuring your content adheres to the defined structure.
-* **Frontmatter-first:** Content Collections are designed to work seamlessly with frontmatter, allowing you to define metadata for your content directly within your files.
+- **Content Validation:** Define a schema for your content's frontmatter to ensure consistency and prevent errors. This is invaluable for team collaboration and long-term maintainability.
+- **Type Safety:** When using TypeScript, Content Collections provide type inference for your content's frontmatter, leading to a more robust development experience.
+- **Powerful Querying:** Astro provides utilities to easily fetch, filter, sort, and paginate your content.
+- **Organized Content:** Keep your content files structured and easily discoverable within your project.
+- **Automatic Zod Integration:** Leverage Zod for robust schema validation, ensuring your content adheres to the defined structure.
+- **Frontmatter-first:** Content Collections are designed to work seamlessly with frontmatter, allowing you to define metadata for your content directly within your files.
 
 ## Getting Started with Content Collections
 
@@ -38,9 +38,8 @@ If you don't already have an Astro project, create one:
 
 Bash
 
-```
+```js
 npm create astro@latest
-
 ```
 
 Follow the prompts to set up your project.
@@ -73,7 +72,7 @@ Here's an example `config.ts` for our `blog` and `authors` collections:
 
 TypeScript
 
-```
+```ts
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
@@ -107,16 +106,16 @@ export const collections = {
 
 **Explanation:**
 
-* `defineCollection`: This helper function from `astro:content` is used to define a new content collection.
-* `type`: Specifies the type of content:
-  * `'content'`: For Markdown (`.md`) or MDX (`.mdx`) files. Astro will parse their frontmatter and content.
-  * `'data'`: For JSON (`.json`) or YAML (`.yaml`, `.yml`) files. Astro will parse their data.
-* `schema`: This is where you define the expected shape of your content's frontmatter (or data for `type: 'data'`). We use `z.object()` from Zod to define the properties and their types.
-  * `z.string()`: Expects a string.
-  * `z.string().optional()`: Expects a string, but it's optional.
-  * `z.date()`: Expects a Date object (Astro will parse valid date strings into Date objects).
-  * `z.array(z.string())`: Expects an array of strings.
-* `export const collections`: This object maps the directory names (`blog`, `authors`) to their respective collection definitions. This is how Astro knows which schema to apply to which content directory.
+- `defineCollection`: This helper function from `astro:content` is used to define a new content collection.
+- `type`: Specifies the type of content:
+  - `'content'`: For Markdown (`.md`) or MDX (`.mdx`) files. Astro will parse their frontmatter and content.
+  - `'data'`: For JSON (`.json`) or YAML (`.yaml`, `.yml`) files. Astro will parse their data.
+- `schema`: This is where you define the expected shape of your content's frontmatter (or data for `type: 'data'`). We use `z.object()` from Zod to define the properties and their types.
+  - `z.string()`: Expects a string.
+  - `z.string().optional()`: Expects a string, but it's optional.
+  - `z.date()`: Expects a Date object (Astro will parse valid date strings into Date objects).
+  - `z.array(z.string())`: Expects an array of strings.
+- `export const collections`: This object maps the directory names (`blog`, `authors`) to their respective collection definitions. This is how Astro knows which schema to apply to which content directory.
 
 ### 4. Creating Your Content Files
 
@@ -168,9 +167,9 @@ JSON
 
 **Important Notes:**
 
-* For `type: 'content'`, files must have `.md` or `.mdx` extensions.
-* For `type: 'data'`, files can have `.json`, `.yaml`, or `.yml` extensions.
-* Astro will automatically validate the frontmatter of your Markdown/MDX files and the data in your JSON/YAML files against the schema you've defined. If there are validation errors, Astro will provide helpful messages during development.
+- For `type: 'content'`, files must have `.md` or `.mdx` extensions.
+- For `type: 'data'`, files can have `.json`, `.yaml`, or `.yml` extensions.
+- Astro will automatically validate the frontmatter of your Markdown/MDX files and the data in your JSON/YAML files against the schema you've defined. If there are validation errors, Astro will provide helpful messages during development.
 
 ### 5. Querying Your Content
 
@@ -208,14 +207,14 @@ const posts = await getCollection('blog');
 
 **Explanation:**
 
-* `import { getCollection } from 'astro:content';`: Imports the `getCollection` helper.
-* `const posts = await getCollection('blog');`: Fetches all entries from the `blog` collection.
-  * Each `post` object will have:
-    * `id`: A unique ID for the entry (e.g., `my-first-post.md`).
-    * `slug`: A URL-friendly slug derived from the filename (e.g., `my-first-post`).
-    * `body`: The Markdown/MDX content (only for `type: 'content'` collections).
-    * `data`: The parsed frontmatter (or data for `type: 'data'` collections), which is type-safe based on your schema!
-    * `render()`: An async function to render the Markdown/MDX content to HTML (only for `type: 'content'` collections).
+- `import { getCollection } from 'astro:content';`: Imports the `getCollection` helper.
+- `const posts = await getCollection('blog');`: Fetches all entries from the `blog` collection.
+  - Each `post` object will have:
+    - `id`: A unique ID for the entry (e.g., `my-first-post.md`).
+    - `slug`: A URL-friendly slug derived from the filename (e.g., `my-first-post`).
+    - `body`: The Markdown/MDX content (only for `type: 'content'` collections).
+    - `data`: The parsed frontmatter (or data for `type: 'data'` collections), which is type-safe based on your schema!
+    - `render()`: An async function to render the Markdown/MDX content to HTML (only for `type: 'content'` collections).
 
 **Example: Displaying a Single Blog Post (`src/pages/blog/[slug].astro`)**
 
@@ -254,9 +253,9 @@ const { Content } = await entry.render();
 
 **Explanation:**
 
-* `getStaticPaths()`: This is essential for generating static pages for each blog post. It fetches all blog entries and creates a path for each one using the `slug`.
-* `const { entry } = Astro.props;`: The individual entry object is passed as a prop from `getStaticPaths`.
-* `const { Content } = await entry.render();`: For `type: 'content'` collections, `entry.render()` is an async function that returns an object containing a `Content` component. You render this component to display the HTML generated from your Markdown/MDX.
+- `getStaticPaths()`: This is essential for generating static pages for each blog post. It fetches all blog entries and creates a path for each one using the `slug`.
+- `const { entry } = Astro.props;`: The individual entry object is passed as a prop from `getStaticPaths`.
+- `const { Content } = await entry.render();`: For `type: 'content'` collections, `entry.render()` is an async function that returns an object containing a `Content` component. You render this component to display the HTML generated from your Markdown/MDX.
 
 **Example: Querying Data Collections (`src/pages/authors/[slug].astro`)**
 
@@ -444,9 +443,9 @@ const authorEntry = await getEntry(entry.data.author);
 
 **Key Points for References:**
 
-* `reference('collection-name')`: This Zod helper from `astro:content` tells Astro that this field refers to an entry in another collection.
-* The value in your frontmatter should be the `slug` of the referenced entry.
-* You'll need to use `await getEntry(entry.data.yourReferenceField)` to fetch the actual data of the referenced entry.
+- `reference('collection-name')`: This Zod helper from `astro:content` tells Astro that this field refers to an entry in another collection.
+- The value in your frontmatter should be the `slug` of the referenced entry.
+- You'll need to use `await getEntry(entry.data.yourReferenceField)` to fetch the actual data of the referenced entry.
 
 ## Advanced Topics
 
@@ -475,12 +474,12 @@ While Content Collections are primarily for static files, you could potentially 
 
 ## Common Pitfalls and Troubleshooting
 
-* **Validation Errors:** Pay close attention to the error messages in your terminal during development. Astro provides clear messages if your content's frontmatter doesn't match the defined schema.
-* **Incorrect File Extensions:** Ensure your files have the correct extensions (`.md`, `.mdx` for `content` type; `.json`, `.yaml`, `.yml` for `data` type).
-* **Missing `export const collections`:** Make sure you've exported the `collections` object correctly in `src/content/config.ts`.
-* **Incorrect Collection Name:** Double-check that the string you pass to `getCollection('your-collection-name')` matches the key in your `collections` object in `config.ts`.
-* **Async/Await:** Remember that `getCollection` and `getEntry` are asynchronous, so always `await` their results.
-* **`getStaticPaths` for Dynamic Routes:** If you're creating dynamic routes (like `[slug].astro`), you absolutely need `getStaticPaths` to inform Astro which pages to generate at build time.
+- **Validation Errors:** Pay close attention to the error messages in your terminal during development. Astro provides clear messages if your content's frontmatter doesn't match the defined schema.
+- **Incorrect File Extensions:** Ensure your files have the correct extensions (`.md`, `.mdx` for `content` type; `.json`, `.yaml`, `.yml` for `data` type).
+- **Missing `export const collections`:** Make sure you've exported the `collections` object correctly in `src/content/config.ts`.
+- **Incorrect Collection Name:** Double-check that the string you pass to `getCollection('your-collection-name')` matches the key in your `collections` object in `config.ts`.
+- **Async/Await:** Remember that `getCollection` and `getEntry` are asynchronous, so always `await` their results.
+- **`getStaticPaths` for Dynamic Routes:** If you're creating dynamic routes (like `[slug].astro`), you absolutely need `getStaticPaths` to inform Astro which pages to generate at build time.
 
 ## Conclusion
 

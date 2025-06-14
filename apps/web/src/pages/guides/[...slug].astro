@@ -1,7 +1,8 @@
 ---
 import { MdxComponents } from "@/components/content/mdx-components";
 import GuidePostLayout from "@/layouts/guide-post.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+export const prerender = true;
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
@@ -15,7 +16,7 @@ type Props = CollectionEntry<"guides">;
 
 const guide = Astro.props;
 const slug = Astro.params.slug;
-const { Content } = await guide.render();
+const { Content } = await render(guide);
 
 if (!slug || !guide) {
   return new Response(null, {
@@ -26,5 +27,5 @@ if (!slug || !guide) {
 ---
 
 <GuidePostLayout {...guide}>
-  <Content components={MdxComponents} />
+  <Content />
 </GuidePostLayout>
