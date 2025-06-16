@@ -1,27 +1,22 @@
 import { defineCollection, z } from "astro:content";
 
-const blog = defineCollection({
-  // Type-check frontmatter using a schema
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      cover: z.string(),
-      category: z.string(),
-      // Transform string to Date object
-      pubDate: z
-        .string()
-        .or(z.date())
-        .transform((val) => new Date(val)),
-    }),
-});
-
-const docs = defineCollection({
+const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    cover: z.string(),
+    category: z.array(z.string()),
+    published: z.boolean(),
+    pubDate: z.date(),
   }),
 });
+
+// const docs = defineCollection({
+//   schema: z.object({
+//     title: z.string(),
+//     description: z.string(),
+//   }),
+// });
 
 const guides = defineCollection({
   schema: z.object({
@@ -60,4 +55,4 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { blog, docs, guides, changelog, legal };
+export const collections = { posts, guides, changelog, legal };

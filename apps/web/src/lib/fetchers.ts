@@ -10,9 +10,9 @@ export async function getCategories() {
 }
 
 export async function getPosts() {
-  const posts = (await getCollection("posts")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const posts = (await getCollection("posts"))
+    .filter((post) => post.data.published)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return posts;
 }

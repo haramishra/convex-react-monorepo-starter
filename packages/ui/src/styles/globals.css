@@ -120,6 +120,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@layer components {
+  .container {
+    @apply w-full mx-auto px-4 max-w-[1440px];
+  }
+}
+
 body {
   @apply m-0;
   font-family:

@@ -1,10 +1,11 @@
 ---
 import { Badge } from "@repo/ui/components/badge";
 import { formatDate } from "@/lib/utils";
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"blog">;
+import type { CollectionEntry } from "astro:content";
+import ImgMod from "../imgMod.astro";
+
+type Props = CollectionEntry<"posts">;
 
 const post = Astro.props;
 ---
@@ -14,7 +15,7 @@ const post = Astro.props;
     href={`/blog/${post.slug}/`}
     class="flex h-52 group-hover:-translate-y-2 group-hover:shadow-xl transition duration-300"
   >
-    <Image
+    <ImgMod
       loading="eager"
       class="w-full h-full object-cover rounded-xl overflow-hidden"
       width={720}

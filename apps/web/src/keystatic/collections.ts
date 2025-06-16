@@ -17,7 +17,7 @@ export const collectionsConfig = {
         label: "Publication Date",
         defaultValue: Date(),
       }),
-      publish: fields.checkbox({
+      published: fields.checkbox({
         label: "Publish post",
         defaultValue: false,
         description: "Click if you wnat the post to be published on prod.",
@@ -25,7 +25,7 @@ export const collectionsConfig = {
       cover: fields.image({
         label: "Blog cover Image",
         directory: "src/assets/images/posts",
-        publicPath: "@assets/images/posts",
+        publicPath: "/src/assets/images/guides/",
       }),
       category: fields.array(fields.text({ label: "Category" }), {
         label: "Tags",

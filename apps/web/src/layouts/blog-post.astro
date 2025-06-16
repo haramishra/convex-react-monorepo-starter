@@ -8,8 +8,9 @@ import type { CollectionEntry } from "astro:content";
 import MainLayout from "./main-layout.astro";
 import { cn } from "@repo/ui/lib/utils";
 import { formatDate } from "@/lib/utils";
+import ImgMod from "@/components/imgMod.astro";
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"posts">;
 
 const slug = Astro.props.slug;
 const { title, description, pubDate, cover, category } = Astro.props.data;
@@ -38,7 +39,7 @@ const { title, description, pubDate, cover, category } = Astro.props.data;
           {category}
         </Badge>
       </a>
-      <Image
+      <ImgMod
         class="rounded-xl overflow-hidden my-6"
         width={720}
         height={360}
