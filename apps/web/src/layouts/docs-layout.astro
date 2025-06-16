@@ -1,28 +1,53 @@
 ---
 import Footer from "@/components/layout/footer.astro";
-// import Header from "@/components/layout/header.astro";
-import MainNavigationMenu from "@/components/main-navigation-menu";
 
-import { Icon } from "astro-icon/components";
 import BaseLayout from "./base-layout.astro";
-
-// import { navMenuConfig } from "@/config/nav-menu";
-// import { docsConfig } from "@/config/docs";
-// import { ThemeToggle } from "@/components/theme-toggle";
-// import MainNav from "@/components/layout/main-nav.astro";
 
 type Props = {
   title: string;
   description: string;
 };
 
+import siteConfig from "@/config/siteConfig.json";
+
+import { buttonVariants } from "@repo/ui/components/button";
+import { cn } from "@repo/ui/lib/utils";
+import Header from "@/components/nav/header.astro";
+import { MobileNavigation } from "@/components/nav/sheet-mobile-nav";
+
+import { NavigationMenuDemo } from "@/components/nav/links";
+// import { marketingConfig } from "@/config/marketing";
+import navData from "@/config/navMenuConfig.json";
+import type { Navigation, NavItem } from "@/types";
+
 const { title, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <div>
-    <MainNavigationMenu client:only />
-  </div>
+  <Header className="max-w-7xl mx-auto w-full ">
+    <NavigationMenuDemo slot="left-header" client:only />
+    <MobileNavigation
+      slot="mobile-nav-header"
+      client:only
+      navigationData={navData as Navigation}
+    />
+
+    <div class="flex items-center gap-x-8" slot="right-header">
+      <!-- <ThemeToggle client:only /> -->
+      <div class="lg:flex justify-center gap-3 hidden items-center flex-row">
+        <a
+          class={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          href={`${siteConfig.appUrl}/login`}>Login</a
+        >
+        <a
+          class={cn(buttonVariants({ variant: "default", size: "sm" }))}
+          href={`${siteConfig.appUrl}/signup`}
+        >
+          Get started &nbsp; &rarr;
+        </a>
+      </div>
+    </div>
+  </Header>
 
   <slot />
 

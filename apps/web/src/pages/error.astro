@@ -1,0 +1,55 @@
+---
+import { ThemeToggle } from "@/components/theme-toggle";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { CircleXIcon, ZapIcon } from "lucide-react";
+---
+
+<BaseLayout title="Thank You!" bodyClass="max-w-screen-xl mx-auto">
+  <nav class="flex items-center justify-between px-4 py-6">
+    <a href="/" class="text-primary-foreground">
+      <span class="sr-only">Lucid forms</span>
+      <!-- <Icons.logo className="h-10 w-auto text-foreground" /> -->
+    </a>
+    <div>
+      <ThemeToggle client:load />
+    </div>
+  </nav>
+  <div class="flex flex-1 items-center justify-center rounded-lg">
+    <div class="mx-auto max-w-md text-center">
+      <CircleXIcon className="mx-auto size-18 text-red-500" />
+      <h1
+        class="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl"
+      >
+        Something went wrong!
+      </h1>
+      <p class="mt-4 text-muted-foreground">
+        An error occurred while processing your request.
+      </p>
+      <div class="mt-6">
+        <a
+          id="homepage-link"
+          href="#"
+          class="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        >
+          Go to Back
+        </a>
+      </div>
+      <p class="text-sm text-muted-foreground mt-20">
+        <span
+          ><ZapIcon className="inline-block h-4 w-4 mr-1 text-yellow-400" /> Powered
+          by</span
+        >
+        <a href="/" class="text-foreground">Lucid forms</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Get the 'referer' parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const referer = urlParams.get("referer") || "/";
+
+    // Set the href attribute of the link
+    document.getElementById("homepage-link")?.setAttribute("href", referer);
+  </script>
+</BaseLayout>

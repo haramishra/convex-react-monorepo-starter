@@ -20,11 +20,15 @@ import {
 import { Separator } from "@repo/ui/components/separator";
 
 import navData from "@/config/navMenuConfig.json";
-import type { ResponsiveNavProps } from "@/types";
+
+import { NavigationMenuDemo } from "./nav/links";
+import type { SidebarItem } from "@/types";
 
 export default function MainNavigationMenu({
   sidebarItems,
-}: ResponsiveNavProps) {
+}: {
+  sidebarItems: SidebarItem[];
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const hasSidebar = sidebarItems && sidebarItems.length > 0;
 
@@ -40,49 +44,7 @@ export default function MainNavigationMenu({
         </a>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            {navData.navItems.map((item, index) => (
-              <NavigationMenuItem key={index}>
-                {item.discriminant === "plainLink" ? (
-                  <NavigationMenuLink asChild>
-                    <a
-                      href={item.value.href}
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    >
-                      {item.value.title}
-                    </a>
-                  </NavigationMenuLink>
-                ) : (
-                  <>
-                    <NavigationMenuTrigger>
-                      {item.value.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid w-[400px] p-2">
-                        {item.value.items?.map((subItem, subIndex) => (
-                          <NavigationMenuLink key={subIndex} asChild>
-                            <a
-                              href={subItem.href}
-                              className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
-                            >
-                              <div className="text-sm font-medium leading-none group-hover:underline">
-                                {subItem.title}
-                              </div>
-                              <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                {subItem.description}
-                              </div>
-                            </a>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </NavigationMenuContent>
-                  </>
-                )}
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+        <NavigationMenuDemo />
 
         {/* CTA Button */}
         <Button className="hidden md:inline-flex">Get Started</Button>

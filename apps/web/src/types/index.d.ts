@@ -1,4 +1,3 @@
-// Types based on your schema
 export type PlainLink = {
   discriminant: "plainLink";
   value: {
@@ -23,11 +22,10 @@ export type Dropdown = {
 
 export type NavItem = PlainLink | Dropdown;
 
-export type NavData = {
+export type Navigation = {
   navItems: NavItem[];
 };
 
-// Sidebar item type - can be simple or have nested items
 export type SidebarItem = {
   title: string;
   href?: string;
@@ -38,9 +36,3 @@ export type SidebarItem = {
     description?: string;
   }[];
 };
-
-// Your navigation data
-
-export interface ResponsiveNavProps {
-  sidebarItems?: SidebarItem[];
-}

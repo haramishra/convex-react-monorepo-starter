@@ -1,0 +1,103 @@
+---
+import { extractSegmentURL } from "@/lib/utils";
+import type { NavItem } from "@/types";
+import { cn } from "@repo/ui/lib/utils";
+
+
+
+type Props = {
+  navItems: NavItem[];
+};
+
+const { navItems } = Astro.props;
+const segment = extractSegmentURL(Astro.url.pathname) || "";
+
+// Helper function to check if current path matches nav item
+function isActiveNavItem(item: NavItem, segment: string): boolean {
+  if (item.discriminant === "plainLink") {
+    return item.value.href.startsWith(`/${segment}`);
+  } else {
+    // For dropdown items, check if any of the sub-items match
+    return item.value.items.some(subItem => subItem.href.startsWith(`/${segment}`));
+  }
+}
+---
+
+{
+  navItems?.length ? (
+    <nav class="hidden gap-6 md:flex">
+      {navItems?.map((item) => {
+        if (item.discriminant === "plainLink") {
+          return (
+            <a
+              href={ item.value.href || "#"}
+              class={cn(
+                "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                isActiveNavItem(item, segment)
+                  ? "text-foreground"
+                  : "text-foreground/60",
+                
+              )}
+            >
+              {item.value.title}
+            </a>
+          );
+        } else {
+          // For dropdown items, we'll render a simple button/span since this appears to be a simple nav
+          // You might want to integrate with a dropdown component here
+          const isActive = isActiveNavItem(item, segment);
+          const hasActiveChild = item.value.items.some(subItem => 
+            subItem.href.startsWith(`/${segment}`)
+          );
+          
+          return (
+            <div class="relative group">
+              <button
+                class={cn(
+                  "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                  hasActiveChild ? "text-foreground" : "text-foreground/60",
+                  // item.value.disabled && "cursor-not-allowed opacity-80"
+                )}
+                
+              >
+                {item.value.title}
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <!-- Simple dropdown menu -->
+              <div class="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {item.value.items.map((subItem) => (
+                  <a
+                    href={subItem.href || "#"}
+                    class={cn(
+                      "block px-4 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+                      subItem.href.startsWith(`/${segment}`)
+                        ? "text-foreground bg-accent"
+                        : "text-foreground/70",
+                      // subItem.disabled && "cursor-not-allowed opacity-50"
+                    )}
+                  >
+                    <div class="font-medium">{subItem.title}</div>
+                    <div class="text-xs text-muted-foreground mt-1">{subItem.description}</div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        }
+      })}
+    </nav>
+  ) : null
+}
+
+<style>
+  /* Ensure dropdown stays visible on hover */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+  .group:hover .group-hover\:visible {
+    visibility: visible;
+  }
+</style>

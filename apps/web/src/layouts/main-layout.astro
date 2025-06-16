@@ -1,18 +1,20 @@
 ---
 import Footer from "@/components/layout/footer.astro";
-import Header from "@/components/layout/header.astro";
 
 import BaseLayout from "./base-layout.astro";
 // import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
 
 import siteConfig from "@/config/siteConfig.json";
 
-import MainNavigationMenu from "@/components/main-navigation-menu";
-import { ThemeSwitcher } from "@repo/ui/components/theme-switcher";
 import { buttonVariants } from "@repo/ui/components/button";
 import { cn } from "@repo/ui/lib/utils";
+import Header from "@/components/nav/header.astro";
+import { MobileNavigation } from "@/components/nav/sheet-mobile-nav";
+
+import { NavigationMenuDemo } from "@/components/nav/links";
 // import { marketingConfig } from "@/config/marketing";
-// import MainNav from "@/components/layout/main-nav.astro";
+import navData from "@/config/navMenuConfig.json";
+import type { Navigation, NavItem } from "@/types";
 
 type Props = {
   title: string;
@@ -24,13 +26,36 @@ const { title, description, mainClass } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <div>
-    <MainNavigationMenu slot="left-header" client:only />
+  <div class="border-b">
+    <Header className="max-w-7xl mx-auto w-full ">
+      <NavigationMenuDemo slot="left-header" client:only />
+      <MobileNavigation
+        slot="mobile-nav-header"
+        client:only
+        navigationData={navData as Navigation}
+      />
+
+      <div class="flex items-center gap-x-8" slot="right-header">
+        <!-- <ThemeToggle client:only /> -->
+        <div class="lg:flex justify-center gap-3 hidden items-center flex-row">
+          <a
+            class={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+            href={`${siteConfig.appUrl}/login`}>Login</a
+          >
+          <a
+            class={cn(buttonVariants({ variant: "default", size: "sm" }))}
+            href={`${siteConfig.appUrl}/signup`}
+          >
+            Get started &nbsp; &rarr;
+          </a>
+        </div>
+      </div>
+    </Header>
   </div>
 
   <main class={cn(mainClass)}>
     <slot />
   </main>
 
-  <Footer />
+  <!-- <Footer /> -->
 </BaseLayout>
