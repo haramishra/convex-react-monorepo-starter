@@ -1,11 +1,8 @@
 ---
 // import siteConfig from "@/config/siteConfig.json";
 import footer from "@/config/footerLinks.json";
-import { cn } from "@repo/ui/lib/utils";
-import { ThemeSwitcher } from "@repo/ui/components/theme-switcher";
-import { Icon } from "astro-icon/components";
-// import SubscribeForm from "@/components/forms/subscribe-form";
-import { MailIcon } from "lucide-react";
+
+import { ThemeToggle } from "../theme-toggle";
 
 type Props = {
   className?: string;
@@ -14,77 +11,159 @@ type Props = {
 const { className } = Astro.props;
 ---
 
-<footer class={cn("border-t", className)}>
-  <div
-    class="container grid grid-cols-1 gap-6 py-14 sm:grid-cols-2 md:grid-cols-5"
-  >
-    {
-      footer.links.map((section) => (
+<section class="bg-background py-16 md:py-28">
+  <div class="container max-w-7xl">
+    <footer>
+      <div
+        class="mb-14 flex flex-col justify-between gap-11 md:items-start xl:flex-row xl:items-center xl:gap-6"
+      >
         <div>
-          <span class="text-sm font-medium text-foreground">
-            {section.title}
-          </span>
-          <ul class="mt-4 list-inside space-y-2">
-            {section.items?.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-sm text-muted-foreground hover:text-primary"
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))}
+          <h1 class="mb-4 text-4xl font-semibold">Get More Done.</h1>
+          <p class="mb-8 text-xl text-muted-foreground">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+          <div class="flex items-center gap-3">
+            <button
+              data-slot="button"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3"
+              >Start for free</button
+            >
+            <button
+              data-slot="button"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3"
+            >
+              Compare plans
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between gap-6 rounded-2xl bg-secondary p-6 shadow-lg md:flex-row"
+        >
+          <div class="flex flex-col items-center justify-center p-10">
+            <div class="flex text-6xl font-semibold">
+              0<div class="h-full text-xl">€</div>
+            </div><div class="text-sm">Free forever</div>
+          </div>
+          <div
+            class="h-[1px] w-full bg-muted-foreground/30 md:h-auto md:w-[1px]"
+          >
+          </div>
+          <ul
+            class="flex flex-col justify-center space-y-3 text-muted-foreground"
+          >
+            <li class="flex items-center gap-2 font-medium hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-check h-5 w-5 text-primary"
+                aria-hidden="true"
+                ><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"
+                ></path></svg
+              >
+              <p class="text-gray-400">1 Team Member</p>
+            </li>
+            <li class="flex items-center gap-2 font-medium hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-check h-5 w-5 text-primary"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"> </circle>
+                <path d="m9 12 2 2 4-4"> </path>
+              </svg>
+              <p class="text-gray-400">Unlimited Downloads</p>
+            </li>
+            <li class="flex items-center gap-2 font-medium hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-check h-5 w-5 text-primary"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"> </circle>
+                <path d="m9 12 2 2 4-4"> </path>
+              </svg>
+              <p class="text-gray-400">100GB Space</p>
+            </li>
+            <li class="flex items-center gap-2 font-medium hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-check h-5 w-5 text-primary"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"> </circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              <p class="text-gray-400">Basic Support</p>
+            </li>
           </ul>
         </div>
-      ))
-    }
-    <div class="flex flex-col items-end md:col-span-2">
-      <div class="w-full">
-        <h3 class="text-start">Subscribe to our newsletter</h3>
-        <p class="text-start text-sm text-muted-foreground">
-          Get the latest updates on feature releases, new features, and more.
-        </p>
-        <!-- <SubscribeForm client:only="react" /> -->
-        <a
-          href="mailto:contact@lucidforms.dev"
-          class="flex items-center gap-2 text-sm text-muted-foreground mt-2"
-        >
-          <MailIcon className="size-4" />
-          contact@lucidforms.co
-        </a>
       </div>
-    </div>
-  </div>
-
-  <div class="border-t py-4">
-    <div class="container flex items-center justify-between">
-      <!-- <span class="text-muted-foreground text-sm">
-        Copyright &copy; 2024. All rights reserved.
-      </span> -->
-      <p class="text-left text-sm text-muted-foreground">
-        Built by{" "}
-        <a
-          href="https://kohi.studio"
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          Kohi studio
-        </a>
-      </p>
-
-      <div class="flex items-center gap-3">
-        <!-- <a
-          href={siteConfig.links.github}
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          <Icon name="github" class="size-5" />
-        </a> -->
-        <!-- <ThemeSwitcher client:load /> -->
+      <div class="grid grid-cols-2 gap-8 border-t pt-10 lg:grid-cols-5">
+        {
+          footer.links.map((section) => (
+            <div>
+              <h4 class="text-lg font-medium text-foreground">
+                {section.title}
+              </h4>
+              <ul class="mt-4 list-inside space-y-2">
+                {section.items?.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="text-base text-muted-foreground hover:text-primary"
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
-    </div>
+      <div
+        class="mt-10 flex flex-col items-start justify-between gap-4 border-t pt-8 text-center text-sm font-medium text-muted-foreground lg:flex-row lg:items-center"
+      >
+        <div class="flex justify-center gap-4 lg:justify-start">
+          <p class="text-muted-foreground">
+            © 2024 Shadcnblocks.com. All rights reserved.
+          </p>
+        </div>
+        <div class="flex items-center justify-center gap-4 lg:justify-start">
+          <ThemeToggle client:load />
+        </div>
+      </div>
+    </footer>
   </div>
-</footer>
+</section>
