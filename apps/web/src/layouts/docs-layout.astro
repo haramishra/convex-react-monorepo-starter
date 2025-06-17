@@ -15,7 +15,7 @@ import { cn } from "@repo/ui/lib/utils";
 import Header from "@/components/nav/header.astro";
 import { MobileNavigation } from "@/components/nav/sheet-mobile-nav";
 
-import { NavigationMenuDemo } from "@/components/nav/links";
+import { NavLinks } from "@/components/nav/links";
 // import { marketingConfig } from "@/config/marketing";
 import navData from "@/config/navMenuConfig.json";
 import type { Navigation, NavItem } from "@/types";
@@ -25,7 +25,11 @@ const { title, description } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   <Header className="max-w-7xl mx-auto w-full ">
-    <NavigationMenuDemo slot="left-header" client:only />
+    <NavLinks
+      navigationData={navData as Navigation}
+      slot="left-header"
+      client:only
+    />
     <MobileNavigation
       slot="mobile-nav-header"
       client:only

@@ -4,7 +4,7 @@
       "discriminant": "plainLink",
       "value": {
         "title": "Home",
-        "href": "/home"
+        "href": "/"
       }
     },
     {

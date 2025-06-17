@@ -11,80 +11,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@repo/ui/components/navigation-menu";
+import type { Navigation, NavItem } from "@/types";
 
-type PlainLink = {
-  discriminant: "plainLink";
-  value: {
-    title: string;
-    href: string;
-  };
-};
-
-type DropdownItem = {
-  title: string;
-  href: string;
-  description: string;
-};
-
-type Dropdown = {
-  discriminant: "dropdown";
-  value: {
-    title: string;
-    items: DropdownItem[];
-  };
-};
-
-type NavItem = PlainLink | Dropdown;
-
-type NavigationData = {
-  navItems: NavItem[];
-};
-
-const navigationData: NavigationData = {
-  navItems: [
-    {
-      discriminant: "plainLink",
-      value: {
-        title: "Home",
-        href: "/home",
-      },
-    },
-    {
-      discriminant: "dropdown",
-      value: {
-        title: "Resources",
-        items: [
-          {
-            title: "Blog",
-            href: "/blog",
-            description: "Explore our blog",
-          },
-          {
-            title: "Guides",
-            href: "/guides",
-            description: "Explore our guide",
-          },
-        ],
-      },
-    },
-    {
-      discriminant: "plainLink",
-      value: {
-        title: "Features",
-        href: "/features",
-      },
-    },
-    {
-      discriminant: "plainLink",
-      value: {
-        title: "Pricing",
-        href: "/pricing",
-      },
-    },
-  ],
-};
-
-export function NavigationMenuDemo() {
+export function NavLinks({ navigationData }: { navigationData: Navigation }) {
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
