@@ -1,4 +1,5 @@
 ---
+import { Separator } from "@repo/ui/components/separator";
 import { cn } from "@repo/ui/lib/utils";
 
 import type { HTMLAttributes } from "astro/types";
@@ -17,4 +18,4 @@ const { heading, text, className, ...attrs } = Astro.props;
   </h1>
   {text && <p class="text-muted-foreground">{text}</p>}
 </div>
-<hr class="my-4" />
+<Separator className="my-2" />
