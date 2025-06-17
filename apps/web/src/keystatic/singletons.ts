@@ -15,6 +15,14 @@ const singletonsConfig = {
       url: fields.url({ label: "Site URL" }),
       appUrl: fields.url({ label: "App URL" }),
       ogImage: fields.url({ label: "Open Graph Image URL" }),
+      signupPath: fields.text({
+        label: "path for signup",
+        description: "eg: /app/singup",
+      }),
+      loginPath: fields.text({
+        label: "path for login",
+        description: "eg: /app/login",
+      }),
     },
   }),
   socials: singleton({
