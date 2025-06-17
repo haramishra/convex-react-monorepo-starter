@@ -4,14 +4,7 @@ import { Menu, ChevronDown } from "lucide-react";
 
 import { Button } from "@repo/ui/components/button";
 import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/sheet";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@repo/ui/components/navigation-menu";
+
 import {
   Collapsible,
   CollapsibleContent,
@@ -21,8 +14,8 @@ import { Separator } from "@repo/ui/components/separator";
 
 import navData from "@/config/navMenuConfig.json";
 
-import { NavigationMenuDemo } from "./nav/links";
-import type { SidebarItem } from "@/types";
+import { NavLinks } from "./nav/links";
+import type { Navigation, SidebarItem } from "@/types";
 
 export default function MainNavigationMenu({
   sidebarItems,
@@ -44,7 +37,7 @@ export default function MainNavigationMenu({
         </a>
 
         {/* Desktop Navigation */}
-        <NavigationMenuDemo />
+        <NavLinks navigationData={navData as Navigation} />
 
         {/* CTA Button */}
         <Button className="hidden md:inline-flex">Get Started</Button>
