@@ -9,6 +9,8 @@ import keystatic from "@keystatic/astro";
 import markdoc from "@astrojs/markdoc";
 import icon from "astro-icon";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -16,4 +18,5 @@ export default defineConfig({
   },
 
   integrations: [react(), markdoc(), keystatic(), icon()],
+  adapter: cloudflare(),
 });
